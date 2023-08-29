@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.shapecontainer {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 15px;
+
+
+
+}
+
+.insta-col {
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    padding: 10px;
+
+
+}
+
+.insta-col input {
+    width: 20px;
+
+
+}
+
+.hello-btn {
+    border-radius: 8px;
+    background: #E55473;
+    margin: 7px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+
+
+}
+
+.hello-btn {
+    border-radius: 8px;
+    background: #E55473;
+    margin: 7px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+
+
+}
+
+.hello-btnc {
+    border-radius: 8px;
+    background: #E55473;
+    margin: 3px;
+    border: none;
+    padding: 3px;
+
+
+
+}

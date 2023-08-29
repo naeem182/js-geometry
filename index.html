@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculatort</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+    <header>
+
+    </header>
+    <main>
+        <!-- container -->
+        <div>
+            <h3>Interactive
+
+                Geometry Genius</h3>
+            <!-- shape container -->
+            <div class="container">
+                <div class="shapecontainer">
+
+
+                    <div class="insta-col"><img src="images/ellipse.png" alt="">
+                        <h3 style="text-align: center;">ellipse</h3>
+                        <h4 style="text-align: center;">minor <input id="ellipseminor" type="number"> cm <sup>2</sup>&&
+                            major <input id="ellipsemajor" type="number"> cm <sup>2</sup>
+                        </h4>
+                        <h2>Area: <span id="ellipsearea">00</span> cm <sup>2</sup></h2>
+                        <button class="hello-btn" onclick="ellipse()">calculate</button>
+                    </div>
+
+
+
+                    <div class="insta-col"><img src="images/rhombus.png" alt="">
+                        <h3 style="text-align: center;">Rhombus </h3>
+                        <h4 style="text-align: center;">base <input id="rhombusbase" type="number"> cm <sup>2</sup>&&
+                            height <input id="rhombusheight" type="number"> cm <sup>2</sup>
+                        </h4>
+                        <h2>Area: <span id="rhombusarea">00</span> cm <sup>2</sup></h2>
+                        <button class="hello-btn" onclick="roumbos()">calculate</button>
+                    </div>
+
+
+                </div>
+                <!-- area calulate -->
+                <div style="width: 400px;  box-sizing: border-box; border: 2px solid palegreen; margin-right: 30px;">
+                    <h2 style="text-align: center; background-color: #E55473;">Area calulate</h2>
+                    <div id="side">
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <script>
+        //get fun
+        function getinvalue(inputfieldid) {
+            const inputfield = document.getElementById(inputfieldid)
+            const elementstring = inputfield.value
+            value = parseFloat(elementstring)
+            return value
+
+        }
+        // set fun
+        function setinvalue(elementid, area) {
+            const element = document.getElementById(elementid)
+            element.innerText = area
+        }
+        //side calclation
+        function sideshow(areatype, area) {
+            const side = document.getElementById("side")
+            const count = side.childElementCount
+            const p = document.createElement('p')
+            // p.innerText = areatype + " " + area
+
+            p.innerHTML = `${count + 1}.${areatype} ${area} <button class="hello-btnc">convert to m<sup>2</sup> </button> `
+            side.appendChild(p)
+
+        }
+
+
+
+
+        function roumbos() {
+
+            const base = getinvalue('rhombusbase')
+            const height = getinvalue('rhombusheight')
+            if (isNaN(base) || isNaN(height)) {
+                alert('proide number plz')
+                return
+            }
+            const rarea = parseFloat(base * height)
+            setinvalue('rhombusarea', rarea)
+            sideshow('roumbosarea', rarea)
+        }
+        function ellipse() {
+
+            const minor = getinvalue('ellipseminor')
+            const major = getinvalue('ellipsemajor')
+            if (isNaN(minor) || isNaN(major)) {
+                alert('proide number plz')
+                return
+            }
+            const earea = parseFloat(Math.PI * minor * major).toFixed(2)
+            setinvalue('ellipsearea', earea)
+            //console.log(earea)
+            sideshow('ellips', earea)
+
+        }
+
+    </script>
+
+</body>
+
+</html>
